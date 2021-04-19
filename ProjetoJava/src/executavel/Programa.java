@@ -1,4 +1,4 @@
-package exacuvavel;
+package executavel;
 
 import java.util.Locale;
 

@@ -1,5 +1,7 @@
 package executavel;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 
 import javax.swing.JOptionPane;
@@ -38,6 +40,14 @@ public class Programa {
 			disciplina.setNota(Double.parseDouble(notaDis));
 
 			aluno1.getListDisciplinas().add(disciplina);
+		}
+
+		int remover = JOptionPane.showConfirmDialog(null, "Qual disciplina deseja remover?");
+
+		if (remover == 0) {
+			String removerDisciplina = JOptionPane.showInputDialog("Qual disciplina deseja remover ?");
+			int n = (Integer.valueOf(removerDisciplina).intValue());
+			aluno1.getListDisciplinas().remove(n - 1);
 		}
 
 		System.out.println(aluno1);

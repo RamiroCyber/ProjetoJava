@@ -18,7 +18,8 @@ public class Aluno {
 
 	private List<Disciplina> disciplinas = new ArrayList<>();
 
-	public Aluno() {
+	public Aluno(String nome) {
+		this.nome = nome;
 	}
 
 	public Aluno(String nome, int idade, String dataNascimento, String rg, String cpf, String mae, String pai,
@@ -138,11 +139,15 @@ public class Aluno {
 
 	public String resultado() {
 		double mediaAprovado = mediaNotas();
-		if (mediaAprovado >= 70) {
-			return "Aluno aprovado";
-		} else {
-			return "Aluno reprovado";
+		if (mediaAprovado >= 50) {
+			if (mediaAprovado >= 70) {
+				return "Aluno aprovado";
+			} else {
+				return "Aluno em Recuperação";
+			}
 		}
+		return "Aluno  Reprovado";
+
 	}
 
 	@Override

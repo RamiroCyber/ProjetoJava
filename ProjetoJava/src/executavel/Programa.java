@@ -26,18 +26,19 @@ public class Programa {
 		Aluno aluno1 = new Aluno(nome, Integer.parseInt(idade), dataNascimento, rg, cpf, mae, pai, dataMatricula,
 				matricula, nomeEscola);
 
-	
-		for(int i = 0; i<=3;i++) {
-			String nomeDis = JOptionPane.showInputDialog("Nome da disciplina: ");
-			String notaDis = JOptionPane.showInputDialog("Nota do aluno na disciplina "+nomeDis+" ?");
-			
+		String quantDisciplinas = JOptionPane.showInputDialog("Quantidade de disciplinas?");
+		int nDisciplinas = Integer.parseInt(quantDisciplinas);
+
+		for (int i = 0; i < nDisciplinas; i++) {
+			String nomeDis = JOptionPane.showInputDialog("Nome da disciplina? ");
+			String notaDis = JOptionPane.showInputDialog("Nota do aluno na disciplina " + nomeDis + " ?");
+
 			Disciplina disciplina = new Disciplina();
 			disciplina.setDisciplina(nomeDis);
 			disciplina.setNota(Double.parseDouble(notaDis));
-			
+
 			aluno1.getListDisciplinas().add(disciplina);
 		}
-		
 
 		System.out.println(aluno1);
 		System.out.println("Com media: " + aluno1.mediaNotas());

@@ -68,9 +68,14 @@ public class Programa {
 			System.out.println(("Nome: ") + listaAlunos.getNome());
 			System.out.println(("Matrícula: ") + listaAlunos.getMatricula());
 			System.out.println("Média do aluno :" + listaAlunos.mediaNotas());
-			System.out.println("Resultado :" + listaAlunos.resultado());
+			System.out.println("Resultado : " + listaAlunos.resultado());
 			System.out.println("-------------------------");
+			for(Disciplina listaDisciplina : listaAlunos.getListDisciplinas()) {
+				System.out.println(listaDisciplina.getDisciplina());
+				System.out.println("-------------------------");
+			}
 		}
+		
 	}
 
 }

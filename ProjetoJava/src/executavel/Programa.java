@@ -13,7 +13,13 @@ public class Programa {
 
 	public static void main(String[] args) {
 		Locale.setDefault(Locale.US);
-
+		
+		String login = JOptionPane.showInputDialog("LOGIN: ");
+		String senha = JOptionPane.showInputDialog("SENHA: ");
+		int senhalogin = Integer.parseInt(senha);
+		
+		if(login.equalsIgnoreCase("admin")  && senhalogin == 1234 ) {
+		
 		List<Aluno> alunos = new ArrayList<Aluno>();
 
 		String receberAlunos = JOptionPane.showInputDialog("Quantos alunos deseja cadastrar? ");
@@ -78,7 +84,9 @@ public class Programa {
 				System.out.println("-------------------------");
 			}
 		}
-
+		}else {
+			JOptionPane.showMessageDialog(null, "Dados Inválidos");
+		}
 	}
 
 }

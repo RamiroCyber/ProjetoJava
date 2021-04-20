@@ -23,18 +23,22 @@ public class Programa {
 		for (int q = 0; q < quantAlunos; q++) {
 
 			String nome = JOptionPane.showInputDialog("Nome do Aluno ?");
-			String idade = JOptionPane.showInputDialog("Idade do aluno ?");
-			String dataNascimento = JOptionPane.showInputDialog("Data de nascimento ?");
-			String rg = JOptionPane.showInputDialog("Registro geral do Aluno ?");
-			String cpf = JOptionPane.showInputDialog("CPF ?");
-			String mae = JOptionPane.showInputDialog("Nome da mãe ?");
-			String pai = JOptionPane.showInputDialog("Nome do Pai ?");
-			String dataMatricula = JOptionPane.showInputDialog("Data da matrícula do Aluno ?");
-			String matricula = JOptionPane.showInputDialog("Matrícula do Aluno ?");
-			String nomeEscola = JOptionPane.showInputDialog("Nome da escola ?");
+			/*
+			 * String idade = JOptionPane.showInputDialog("Idade do aluno ?"); String
+			 * dataNascimento = JOptionPane.showInputDialog("Data de nascimento ?"); String
+			 * rg = JOptionPane.showInputDialog("Registro geral do Aluno ?"); String cpf =
+			 * JOptionPane.showInputDialog("CPF ?"); String mae =
+			 * JOptionPane.showInputDialog("Nome da mãe ?"); String pai =
+			 * JOptionPane.showInputDialog("Nome do Pai ?"); String dataMatricula =
+			 * JOptionPane.showInputDialog("Data da matrícula do Aluno ?"); String matricula
+			 * = JOptionPane.showInputDialog("Matrícula do Aluno ?"); String nomeEscola =
+			 * JOptionPane.showInputDialog("Nome da escola ?");
+			 */
 
-			Aluno aluno1 = new Aluno(nome, Integer.parseInt(idade), dataNascimento, rg, cpf, mae, pai, dataMatricula,
-					matricula, nomeEscola);
+			Aluno aluno1 = new Aluno(nome);/*
+											 * , Integer.parseInt(idade), dataNascimento, rg, cpf, mae, pai,
+											 * dataMatricula, matricula, nomeEscola);
+											 */
 
 			String quantDisciplinas = JOptionPane.showInputDialog("Quantidade de disciplinas?");
 			int nDisciplinas = Integer.parseInt(quantDisciplinas);
@@ -69,13 +73,15 @@ public class Programa {
 			System.out.println(("Matrícula: ") + listaAlunos.getMatricula());
 			System.out.println("Média do aluno :" + listaAlunos.mediaNotas());
 			System.out.println("Resultado : " + listaAlunos.resultado());
-			System.out.println("-------------------------");
-			for(Disciplina listaDisciplina : listaAlunos.getListDisciplinas()) {
-				System.out.println(listaDisciplina.getDisciplina());
+
+			for (Disciplina listaDisciplina : listaAlunos.getListDisciplinas()) {
+				System.out.println("-------------------------");
+				System.out.println("Nome disciplina: " + listaDisciplina.getDisciplina());
+				System.out.println("Nota disciplina: " + listaDisciplina.getNota());
 				System.out.println("-------------------------");
 			}
 		}
-		
+
 	}
 
 }

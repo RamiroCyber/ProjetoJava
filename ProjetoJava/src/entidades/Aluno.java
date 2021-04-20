@@ -3,6 +3,8 @@ package entidades;
 import java.util.ArrayList;
 import java.util.List;
 
+import constantes.Status;
+
 public class Aluno {
 
 	private String nome;
@@ -141,12 +143,12 @@ public class Aluno {
 		double mediaAprovado = mediaNotas();
 		if (mediaAprovado >= 50) {
 			if (mediaAprovado >= 70) {
-				return "Aluno aprovado";
+				return Status.aprovado;
 			} else {
-				return "Aluno em Recuperação";
+				return Status.recuperacao;
 			}
 		}
-		return "Aluno  Reprovado";
+		return Status.reprovado;
 
 	}
 

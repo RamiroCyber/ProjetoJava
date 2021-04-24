@@ -8,6 +8,8 @@ import javax.swing.JOptionPane;
 
 import entidades.Aluno;
 import entidades.Disciplina;
+import entidades.Secretario;
+import interfaces.PermitirAcesso;
 
 public class Programa {
 
@@ -16,9 +18,10 @@ public class Programa {
 
 		String login = JOptionPane.showInputDialog("LOGIN: ");
 		String senha = JOptionPane.showInputDialog("SENHA: ");
-		int senhalogin = Integer.parseInt(senha);
+		
+		PermitirAcesso secretario = new Secretario();
 
-		if (login.equalsIgnoreCase("admin") && senhalogin == 1234) {
+		if (secretario.autenticar(login, senha)) {
 
 			List<Aluno> alunos = new ArrayList<Aluno>();
 

@@ -57,6 +57,7 @@ public class Programa {
 		System.out.println("-----------------------------------------------------------------------");
 		System.out.println("Sumário");
 		System.out.println("Data Pedido: " + sdf2.format(new Date()));
+		System.out.println("Status: "+ pedido.getStatusPedido());
 		System.out.println("Cliente: " + c1);
 		System.out.println("Itens do pedido: ");
 
